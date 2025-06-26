@@ -1,0 +1,34 @@
+.nav {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  background: rgba(255,255,255,0.97);
+  box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+  z-index: 100;
+  backdrop-filter: blur(6px);
+}
+
+.navList {
+  display: flex;
+  justify-content: center;
+  gap: 32px;
+  list-style: none;
+  margin: 0;
+  padding: 14px 0;
+}
+
+.link {
+  text-decoration: none;
+  color: #181818;
+  font-weight: 500;
+  font-size: 1.08rem;
+  padding: 4px 8px;
+  border-radius: 7px;
+  transition: background 0.2s, color 0.2s;
+}
+
+.link:hover,
+.link:focus {
+  background: var(--color-accent);
+  color: #fff;
+}

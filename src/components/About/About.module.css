@@ -1,0 +1,29 @@
+.about {
+  padding: var(--space-lg) var(--space-md);
+  background: #fafbfc;
+  display: flex;
+  justify-content: center;
+}
+
+.inner {
+  max-width: 650px;
+  text-align: center;
+}
+
+h2 {
+  font-size: 2rem;
+  margin-bottom: var(--space-sm);
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+p {
+  font-size: 1.25rem;
+  line-height: 1.7;
+  color: #454545;
+}
+
+.highlight {
+  color: var(--color-accent);
+  font-weight: 600;
+}
