@@ -6,7 +6,7 @@ export default function About() {
       <div className={styles.inner}>
         <h2>About Me</h2>
         <p>
-          I’m Krinna, a senior frontend developer obsessed with <span className={styles.highlight}>details, speed, and beautiful UIs</span>.
+          I’m Krinna, a full-stack developer obsessed with <span className={styles.highlight}>details, speed, and beautiful UIs</span>.
           I love turning design systems into code, making animations feel magical, and making websites that feel like native apps.
         </p>
       </div>

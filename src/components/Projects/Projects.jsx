@@ -1,9 +1,12 @@
 import styles from './Projects.module.css';
+import proj1Img from '../../assets/bizsupportpro.png';
+import proj2Img from '../../assets/what-to-wear.png';
+import proj3Img from '../../assets/massitpro.png';
 
 const PROJECTS = [
   {
     title: "BizSupportPro",
-    image: "https://your-image-url-or-placeholder.png",
+    image: proj1Img,
     description: "Ticketing & subscription management platform for small businesses.",
     tech: ["React", "Node.js", "Express", "Stripe"],
     live: "https://krinna21.github.io/bizsupportpro/",    
@@ -11,15 +14,15 @@ const PROJECTS = [
   },
   {
     title: "WhatToWear",
-    image: "https://your-image-url-or-placeholder.png",
+    image: proj2Img, 
     description: "Weather-based outfit suggestion app built with React.",
     tech: ["React", "OpenWeather API"],
-    live: "#",  
+    live: "https://www.whatowear.jumpingcrab.com/",  
     code: "https://github.com/Krinna21/what-to-wear"
   },
   {
     title: "MassItPro",
-    image: "https://your-image-url-or-placeholder.png",
+    image: proj3Img,
     description: "Mass email marketing web platform with analytics dashboard.",
     tech: ["React", "Node.js", "MongoDB"],
     live: "https://massitpro.com",
