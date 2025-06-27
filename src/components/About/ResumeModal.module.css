@@ -109,10 +109,10 @@
 
 .closeBtn {
   position: absolute;
-  top: 7px;
-  right: 18px;
+  top: -15px;
+  right: -20px;
   background: transparent;
-  color: #1a1950;
+  color: #ffffff;
   font-size: 2rem;
   border: none;
   cursor: pointer;

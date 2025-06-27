@@ -1,6 +1,6 @@
 import { useRef } from "react";
 import styles from "./ResumeModal.module.css";
-import resumePDF from "../assets/Krinna-Resume.pdf"; 
+import resumePDF from "/Krinna-Resume.pdf"; 
 
 export default function ResumeModal({ open, onClose }) {
   const overlayRef = useRef();
