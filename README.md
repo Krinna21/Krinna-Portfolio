@@ -6,7 +6,7 @@ A modern, interactive, and vibrant developer portfolio built with React + Vite, 
 
 # 🌎 Live Demo
 
-
+https://krinna-portfolio.vercel.app/
 
 ---
 
