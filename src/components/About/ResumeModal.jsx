@@ -1,5 +1,6 @@
 import { useRef } from "react";
 import styles from "./ResumeModal.module.css";
+import resumePDF from "../assets/Krinna-Resume.pdf"; 
 
 export default function ResumeModal({ open, onClose }) {
   const overlayRef = useRef();
@@ -16,14 +17,14 @@ export default function ResumeModal({ open, onClose }) {
         <button className={styles.closeBtn} onClick={onClose}>✕</button>
         <div className={styles.letter}>
           <iframe
-            src="/Krinna_Resume.pdf"
+            src={resumePDF}
             title="Resume"
             className={styles.pdf}
             frameBorder={0}
           />
         </div>
         <div className={styles.actions}>
-          <a href="/Krinna_Resume.pdf" download className={styles.actBtn}>Download</a>
+          <a href={resumePDF} download className={styles.actBtn}>Download</a>
           <button onClick={() => window.print()} className={styles.actBtn}>Print</button>
         </div>
       </div>
