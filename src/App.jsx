@@ -4,6 +4,7 @@ import Hero from './components/Hero/Hero';
 import About from './components/About/About';
 import ProtfolioShowcase from './components/PortfolioShowcase/PortfolioShowcase';
 import Contact from './components/Contact/Contact';
+import CursorBurst from "./components/CursorBurst";
 
 const SECTIONS = ['hero', 'about', 'projects', 'contact'];
 
@@ -29,6 +30,7 @@ function App() {
 
   return (
     <>
+      <CursorBurst />
       <NavBar activeId={activeId} />
       <Hero />
       <About />

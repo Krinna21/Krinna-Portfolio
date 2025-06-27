@@ -19,7 +19,7 @@ const PROJECTS = [
     description: "Weather-based outfit suggestion app built with React.",
     tech: ["React", "OpenWeather API"],
     live: "https://www.whatowear.jumpingcrab.com/",  
-    code: "https://github.com/Krinna21/what-to-wear"
+    code: "https://github.com/Krinna21/se_project_react"
   },
   {
     title: "MassItPro",

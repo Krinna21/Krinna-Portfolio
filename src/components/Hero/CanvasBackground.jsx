@@ -13,7 +13,7 @@ function getRandomOutsideCircle(width, height, radius) {
 const DOTS = 1200; 
 const CURSOR_RADIUS = 60;
 const CURSOR_STRENGTH = 46;
-const SAFE_RADIUS = 180;
+const SAFE_RADIUS = 260;
 const RETURN_SPEED = 0.09;
 const LINE_DISTANCE = 38;
 const DOT_SIZE = 3.2;
@@ -61,7 +61,6 @@ export default function CanvasBackground({ className, scatter }) {
     function draw() {
       ctx.clearRect(0, 0, w, h);
 
-      // Lines
       for (let i = 0; i < dots.length; i++) {
         for (let j = i + 1; j < dots.length; j++) {
           const dx = dots[i].x - dots[j].x;

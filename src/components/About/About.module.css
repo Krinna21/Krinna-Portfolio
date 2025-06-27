@@ -76,46 +76,51 @@ p {
 
 .btnRow {
   display: flex;
+  gap: 19px;
+  margin-top: 38px;
   justify-content: center;
-  gap: 18px;
-  margin-bottom: 48px;
+  flex-wrap: wrap;
 }
 
 .primaryBtn, .outlineBtn {
-  display: inline-flex;
+  display: flex;
   align-items: center;
   gap: 7px;
-  padding: 12px 28px;
-  font-size: 1.05rem;
-  font-weight: 600;
-  border-radius: 10px;
+  font-size: 1.17rem;
+  font-weight: 700;
+  border-radius: 11px;
+  padding: 15px 32px;
+  border: none;
+  outline: none;
   text-decoration: none;
   cursor: pointer;
-  transition: background 0.19s, box-shadow 0.22s, color 0.19s, border 0.18s;
+  transition: background 0.17s, color 0.18s, box-shadow 0.18s, border 0.18s;
 }
 
 .primaryBtn {
-  background: linear-gradient(90deg, #866aff 0%, #a77bfa 100%);
+  background: linear-gradient(92deg, #b16bff 15%, #1ac9ff 60%, #fa44e9 100%);
   color: #fff;
-  box-shadow: 0 4px 24px #a98bfa33;
+  box-shadow: 0 4px 24px #b16bff14;
   border: none;
 }
+
 .primaryBtn:hover {
-  background: linear-gradient(90deg, #a77bfa 0%, #866aff 100%);
-  box-shadow: 0 6px 32px #a98bfa66;
+  background: linear-gradient(90deg, #fa44e9 0%, #b16bff 100%);
+  box-shadow: 0 8px 30px #fa44e933;
 }
 
 .outlineBtn {
   background: transparent;
-  color: #a98bfa;
   border: 2px solid #a98bfa;
-  box-shadow: 0 2px 8px #2e2a4922;
+  color: #a98bfa;
 }
+
 .outlineBtn:hover {
-  background: #1a133d;
+  background: #241a30cc;
+  border-color: #fa44e9;
   color: #fff;
-  border-color: #a98bfa;
 }
+
 
 .statsRow {
   display: flex;

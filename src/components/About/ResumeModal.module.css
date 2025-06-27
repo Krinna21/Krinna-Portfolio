@@ -1,0 +1,127 @@
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(24, 18, 36, 0.94);
+  z-index: 2000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: fadeInBg 0.42s cubic-bezier(.77,.01,.15,1) forwards;
+}
+
+@keyframes fadeInBg {
+  from { background: rgba(24,18,36,0); }
+  to   { background: rgba(24,18,36,0.94);}
+}
+
+.letterWrap {
+  position: relative;
+  min-width: 320px;
+  width: 97vw;
+  max-width: 840px;
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  animation: letterOpen 0.7s cubic-bezier(.77,.01,.15,1);
+}
+
+@keyframes letterOpen {
+  0% {
+    transform: scale(0.45) rotateX(50deg) translateY(70px);
+    opacity: 0.2;
+    box-shadow: 0 0px 0px #0000;
+    border-radius: 60px 60px 12px 12px;
+  }
+  60% {
+    transform: scale(1.05) rotateX(-10deg) translateY(-10px);
+    opacity: 0.96;
+    box-shadow: 0 24px 60px #1ac9ff11;
+    border-radius: 25px 25px 11px 11px;
+  }
+  100% {
+    transform: scale(1) rotateX(0) translateY(0);
+    opacity: 1;
+    box-shadow: 0 16px 50px #1ac9ff16, 0 2px 24px #b16bff22;
+    border-radius: 18px;
+  }
+}
+
+.letter {
+  flex: 1 1 auto;
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 8px 38px #28204822;
+  overflow: hidden;
+  position: relative;
+  margin-top: 22px;
+  margin-bottom: 16px;
+  animation: unfoldLetter 1.1s cubic-bezier(.77,.01,.15,1);
+}
+
+@keyframes unfoldLetter {
+  0% {
+    transform: scaleY(0.13) scaleX(0.9) translateY(-40px) skewY(12deg);
+    opacity: 0;
+    border-radius: 70px 70px 20px 20px;
+  }
+  65% {
+    transform: scaleY(1.07) scaleX(1.02) translateY(8px) skewY(-3deg);
+    opacity: 1;
+    border-radius: 22px 22px 12px 12px;
+  }
+  100% {
+    transform: scaleY(1) scaleX(1) translateY(0) skewY(0);
+    border-radius: 18px;
+  }
+}
+
+.pdf {
+  width: 100%;
+  height: 100%;
+  border: none;
+  background: #fff;
+}
+
+.actions {
+  display: flex;
+  gap: 16px;
+  justify-content: flex-end;
+  margin-bottom: 10px;
+}
+
+.actBtn {
+  background: #1ac9ff;
+  color: #fff;
+  font-weight: 600;
+  border: none;
+  border-radius: 7px;
+  padding: 7px 18px;
+  font-size: 1.05rem;
+  text-decoration: none;
+  margin-top: 0;
+  cursor: pointer;
+  transition: background 0.19s;
+}
+.actBtn:hover {
+  background: linear-gradient(90deg, #b16bff 10%, #fa44e9 100%);
+}
+
+.closeBtn {
+  position: absolute;
+  top: 7px;
+  right: 18px;
+  background: transparent;
+  color: #1a1950;
+  font-size: 2rem;
+  border: none;
+  cursor: pointer;
+  z-index: 10;
+  transition: color 0.2s;
+  line-height: 1;
+  padding: 0 8px;
+}
+
+.closeBtn:hover {
+  color: #fa44e9;
+}

@@ -1,18 +1,28 @@
 import styles from "./TechStackTab.module.css";
 
+import htmlIcon from "../../assets/html.svg";     
+import cssIcon from "../../assets/css.svg";
+import jsIcon from "../../assets/js.svg";
+import nodeIcon from "../../assets/node.svg";
+import reactIcon from "../../assets/react.svg";
+import mongoIcon from "../../assets/mongo.svg";
+import jwtIcon from "../../assets/jwt.svg";
+import gitIcon from "../../assets/git.svg";
+import figmaIcon from "../../assets/figma.svg";
+import vueIcon from "../../assets/vue.svg";
+
+
 const TECH_STACK = [
-  { name: "HTML", icon: <div className={styles.iconPlaceholder}>HTML</div> },
-  { name: "CSS", icon: <div className={styles.iconPlaceholder}>CSS</div> },
-  { name: "JavaScript", icon: <div className={styles.iconPlaceholder}>JS</div> },
-  { name: "Tailwind CSS", icon: <div className={styles.iconPlaceholder}>TW</div> },
-  { name: "Express JS", icon: <div className={styles.iconPlaceholder}>Ex</div> },
-  { name: "Node JS", icon: <div className={styles.iconPlaceholder}>Node</div> },
-  { name: "React + Native", icon: <div className={styles.iconPlaceholder}></div> },
-  { name: "MongoDB", icon: <div className={styles.iconPlaceholder}></div> },
-  { name: "JWT", icon: <div className={styles.iconPlaceholder}>JWT</div> },
-  { name: "PostgreSQL", icon: <div className={styles.iconPlaceholder}>PG</div> },
-  { name: "TypeScript", icon: <div className={styles.iconPlaceholder}>TS</div> },
-  { name: "Docker", icon: <div className={styles.iconPlaceholder}></div> },
+  { name: "HTML", icon: htmlIcon },
+  { name: "CSS", icon: cssIcon },
+  { name: "JavaScript", icon: jsIcon },
+  { name: "Node JS", icon: nodeIcon },
+  { name: "React + Native", icon: reactIcon },
+  { name: "MongoDB", icon: mongoIcon },
+  { name: "JWT", icon: jwtIcon },
+  { name: "GitHub", icon: gitIcon },
+  { name: "Figma", icon: figmaIcon },
+  { name: "Vue", icon: vueIcon },
 ];
 
 export default function TechStackTab() {
@@ -20,10 +30,13 @@ export default function TechStackTab() {
     <div className={styles.grid}>
       {TECH_STACK.map((tech) => (
         <div className={styles.card} key={tech.name}>
-          <div className={styles.icon}>{tech.icon}</div>
+          <div className={styles.icon}>
+            <img src={tech.icon} alt={tech.name} className={styles.iconImg} />
+          </div>
           <div className={styles.label}>{tech.name}</div>
         </div>
       ))}
     </div>
   );
 }
+

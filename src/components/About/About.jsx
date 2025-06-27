@@ -1,6 +1,18 @@
+import { useState } from "react";
 import styles from './About.module.css';
+import ResumeModal from "./ResumeModal";
 
 export default function About() {
+  const [showResume, setShowResume] = useState(false);
+
+  function handleViewProjects(e) {
+    e.preventDefault();
+    const section = document.getElementById("portfolio-showcase");
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth" });
+    }
+  }
+
   return (
     <section className={styles.about} id="about">
       <div className={styles.inner}>
@@ -10,11 +22,15 @@ export default function About() {
           I love turning design systems into code, making animations feel magical, and building websites that feel like native apps.
         </p>
         <div className={styles.btnRow}>
-          <a className={styles.primaryBtn} href="/Krinna_Resume.pdf" download>
-            <span>⬇</span> Download Resume
-          </a>
-          <a className={styles.outlineBtn} href="#projects">
-            <span></span> View Projects
+          <button className={styles.primaryBtn} onClick={() => setShowResume(true)}>
+            <span>📄</span> Download Resume
+          </button>
+          <a
+            className={styles.outlineBtn}
+            href="#portfolio-showcase"
+            onClick={handleViewProjects}
+          >
+            View Projects
           </a>
         </div>
         <div className={styles.statsRow}>
@@ -44,6 +60,7 @@ export default function About() {
           </div>
         </div>
       </div>
+      <ResumeModal open={showResume} onClose={() => setShowResume(false)} />
     </section>
   );
 }
