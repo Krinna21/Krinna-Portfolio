@@ -1,0 +1,47 @@
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 30px 50px;
+  margin: 40px auto 0 auto;
+  justify-items: center;
+}
+.card {
+  background: rgba(34, 32, 55, 0.94);
+  border-radius: 19px;
+  box-shadow: 0 2px 12px #0003, 0 2px 16px #b16bff1c, 0 1px 14px #1ac9ff11;
+  padding: 38px 15px 26px 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 0;
+  border: 1.5px solid #34266d4d;
+  transition: transform 0.21s, box-shadow 0.23s;
+}
+.card:hover {
+  transform: translateY(-5px) scale(1.04);
+  box-shadow: 0 6px 28px #a98bfa23, 0 10px 38px #1ac9ff16;
+  border-color: #b16bff44;
+}
+.icon {
+  margin-bottom: 13px;
+  font-size: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  border-radius: 14px;
+  background: #241b4333;
+}
+.label {
+  color: #fff;
+  font-size: 1.12rem;
+  font-weight: 600;
+  text-align: center;
+  margin-top: 3px;
+  letter-spacing: 0.01em;
+}
+.iconPlaceholder {
+  color: #b16bff;
+  font-size: 1.3rem;
+}

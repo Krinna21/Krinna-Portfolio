@@ -13,8 +13,8 @@ body {
   min-height: 100vh;
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
-  background: #fff;
-  color: #181818;
+  background: #101018; 
+  color: #fff;
 }
 img, picture, video, canvas, svg {
   display: block;
@@ -38,8 +38,8 @@ input, button, textarea, select {
 
 :root {
   --font-main: 'SF Pro Display', 'Inter', 'Segoe UI', Arial, sans-serif;
-  --color-bg: #fff;
-  --color-text: #181818;
+  --color-bg: #000000;     
+  --color-text: #fff; 
   --color-accent: #00aaff; 
   --radius: 14px;
   --space-xs: 8px;

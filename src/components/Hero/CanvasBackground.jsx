@@ -1,12 +1,5 @@
 import { useRef, useEffect } from "react";
 
-const DOTS = 2000; 
-const CURSOR_RADIUS = 100;
-const CURSOR_STRENGTH = 38;
-const SAFE_RADIUS = 180;
-const RETURN_SPEED = 0.09;
-const LINE_DISTANCE = 35;
-
 function getRandomOutsideCircle(width, height, radius) {
   let x, y;
   let cx = width / 2, cy = height / 2;
@@ -15,6 +8,29 @@ function getRandomOutsideCircle(width, height, radius) {
     y = Math.random() * height;
   } while (Math.sqrt((x - cx) ** 2 + (y - cy) ** 2) < radius);
   return { x, y };
+}
+
+const DOTS = 1200; 
+const CURSOR_RADIUS = 60;
+const CURSOR_STRENGTH = 46;
+const SAFE_RADIUS = 180;
+const RETURN_SPEED = 0.09;
+const LINE_DISTANCE = 38;
+const DOT_SIZE = 3.2;
+
+const PALETTE = [
+  "#a98bfa", 
+  "#b16bff", 
+  "#1ac9ff", 
+  "#fa44e9" 
+];
+
+function lerpColor(a, b, t) {
+  const ah = parseInt(a.replace('#',''), 16), bh = parseInt(b.replace('#',''), 16);
+  const ar = (ah >> 16) & 0xff, ag = (ah >> 8) & 0xff, ab = ah & 0xff;
+  const br = (bh >> 16) & 0xff, bg = (bh >> 8) & 0xff, bb = bh & 0xff;
+  const rr = ar + t * (br - ar), rg = ag + t * (bg - ag), rb = ab + t * (bb - ab);
+  return `rgb(${rr|0},${rg|0},${rb|0})`;
 }
 
 export default function CanvasBackground({ className, scatter }) {
@@ -31,11 +47,13 @@ export default function CanvasBackground({ className, scatter }) {
 
     let dots = Array.from({ length: DOTS }, () => {
       const { x, y } = getRandomOutsideCircle(w, h, SAFE_RADIUS);
+      const color = PALETTE[Math.floor(Math.random() * PALETTE.length)];
       return {
         homeX: x,
         homeY: y,
         x,
         y,
+        color,
       };
     });
 
@@ -43,6 +61,7 @@ export default function CanvasBackground({ className, scatter }) {
     function draw() {
       ctx.clearRect(0, 0, w, h);
 
+      // Lines
       for (let i = 0; i < dots.length; i++) {
         for (let j = i + 1; j < dots.length; j++) {
           const dx = dots[i].x - dots[j].x;
@@ -52,7 +71,7 @@ export default function CanvasBackground({ className, scatter }) {
             ctx.beginPath();
             ctx.moveTo(dots[i].x, dots[i].y);
             ctx.lineTo(dots[j].x, dots[j].y);
-            ctx.strokeStyle = "#b3e0ff33"; 
+            ctx.strokeStyle = lerpColor(dots[i].color, dots[j].color, 0.5) + "33"; 
             ctx.lineWidth = 1;
             ctx.stroke();
           }
@@ -87,9 +106,14 @@ export default function CanvasBackground({ className, scatter }) {
         }
 
         ctx.beginPath();
-        ctx.arc(dot.x, dot.y, 1.6, 0, 2 * Math.PI);
-        ctx.fillStyle = "#00aaff88";
+        ctx.arc(dot.x, dot.y, DOT_SIZE, 0, 2 * Math.PI);
+        ctx.shadowColor = dot.color + "dd";
+        ctx.shadowBlur = 10;
+        ctx.fillStyle = dot.color;
+        ctx.globalAlpha = 0.92;
         ctx.fill();
+        ctx.shadowBlur = 0;
+        ctx.globalAlpha = 1;
       }
 
       animationFrame = requestAnimationFrame(draw);
@@ -118,11 +142,13 @@ export default function CanvasBackground({ className, scatter }) {
       cy = h / 2;
       dots = Array.from({ length: DOTS }, () => {
         const { x, y } = getRandomOutsideCircle(w, h, SAFE_RADIUS);
+        const color = PALETTE[Math.floor(Math.random() * PALETTE.length)];
         return {
           homeX: x,
           homeY: y,
           x,
           y,
+          color,
         };
       });
     }
@@ -148,6 +174,7 @@ export default function CanvasBackground({ className, scatter }) {
         zIndex: 1,
         pointerEvents: "auto",
         display: "block",
+        background: "transparent",
       }}
     />
   );

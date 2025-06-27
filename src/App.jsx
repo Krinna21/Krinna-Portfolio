@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import NavBar from './components/NavBar/NavBar';
 import Hero from './components/Hero/Hero';
 import About from './components/About/About';
-import Projects from './components/Projects/Projects';
+import ProtfolioShowcase from './components/PortfolioShowcase/PortfolioShowcase';
 import Contact from './components/Contact/Contact';
 
 const SECTIONS = ['hero', 'about', 'projects', 'contact'];
@@ -32,7 +32,7 @@ function App() {
       <NavBar activeId={activeId} />
       <Hero />
       <About />
-      <Projects />
+      <ProtfolioShowcase />
       <Contact />
     </>
   );

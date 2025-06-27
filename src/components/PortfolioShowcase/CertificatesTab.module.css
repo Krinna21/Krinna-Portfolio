@@ -1,0 +1,54 @@
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
+  gap: 36px;
+  margin: 30px auto 0 auto;
+  justify-items: center;
+}
+
+.card {
+  width: 100%;
+  max-width: 470px;
+  background: rgba(29, 26, 48, 0.85);
+  border-radius: 18px;
+  box-shadow: 0 4px 36px #281a4a44, 0 1.5px 10px #1ac9ff22;
+  border: 2px solid #34266d29;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px 18px 15px 18px;
+  transition: box-shadow 0.21s;
+}
+
+.card:hover {
+  box-shadow: 0 8px 44px #a98bfa33, 0 1.5px 16px #1ac9ff33;
+}
+
+.img {
+  width: 100%;
+  height: 230px;
+  object-fit: contain;
+  border-radius: 13px;
+  background: #232336;
+  border: none;
+  margin-bottom: 18px;
+  padding: 0;
+  box-shadow: none;
+}
+
+.meta {
+  text-align: center;
+}
+
+.certName {
+  font-size: 1.12rem;
+  font-weight: 600;
+  color: #e7dfff;
+  margin-bottom: 5px;
+}
+
+.certDate {
+  font-size: 0.98rem;
+  color: #b0b7ce;
+  letter-spacing: 0.01em;
+}

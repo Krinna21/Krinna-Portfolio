@@ -11,7 +11,7 @@ export default function Hero() {
       const hero = document.getElementById("hero");
       if (!hero) return;
       const rect = hero.getBoundingClientRect();
-      if (rect.bottom < window.innerHeight * 0.3) {
+      if (rect.bottom < window.innerHeight * 0.5) {
         setScatter(true);
       } else {
         setScatter(false);
